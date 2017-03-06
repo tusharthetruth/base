@@ -7,7 +7,7 @@ import android.content.res.Resources;
  * Created by appstreet on 2/23/17.
  */
 
-public class App extends Application {
+public class App extends Application implements ASLifeCycleCallBacks.AppLifeCycleListener {
 
     private static App instance;
 
@@ -20,5 +20,15 @@ public class App extends Application {
 
     public static Resources R() {
         return instance.getResources();
+    }
+
+    @Override
+    public void onAppForegrounded() {
+
+    }
+
+    @Override
+    public void onAppBackgrounded() {
+
     }
 }
