@@ -1,6 +1,7 @@
 package com.base.util;
 
 import android.content.Context;
+import android.content.Loader;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
@@ -124,6 +125,22 @@ public class ASharedPrefrence {
 
     public static void clearAll() {
         mPrefEditor.clear().commit();
+    }
+
+    public static String getString(String key, String defaultValue) {
+        return getPrefs().getString(key, defaultValue);
+    }
+
+    public static float getFloat(String key, Float defaultValue) {
+        return getPrefs().getFloat(key, defaultValue);
+    }
+
+    public static Long getLong(String key, Long defaultValue) {
+        return getPrefs().getLong(key, defaultValue);
+    }
+
+    public static Boolean getBoolean(String key, Boolean defaultValue) {
+        return getPrefs().getBoolean(key, defaultValue);
     }
 }
 
